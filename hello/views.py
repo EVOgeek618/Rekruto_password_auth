@@ -1,6 +1,4 @@
 from django.http import HttpResponse
+import random
 def hello(request):
-    if request.method == "GET":
-        name = request.GET.get("name", "Rekruto")
-        message = request.GET.get("message", "Давай дружить")
-        return HttpResponse(f"Hello {name}! {message}!")
+    return HttpResponse(random.sample(range(10), 4))
